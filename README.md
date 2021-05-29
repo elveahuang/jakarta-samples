@@ -1,2 +1,1 @@
-# jakarta-samples
-jakarta-samples
+# Jakarta EE Samples
