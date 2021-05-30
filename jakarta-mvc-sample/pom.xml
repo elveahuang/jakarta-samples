@@ -39,14 +39,6 @@
                     <groupId>org.jboss.weld.servlet</groupId>
                     <artifactId>weld-servlet-core</artifactId>
                 </dependency>
-                <dependency>
-                    <groupId>org.jboss.classfilewriter</groupId>
-                    <artifactId>jboss-classfilewriter</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.logging</groupId>
-                    <artifactId>jboss-logging</artifactId>
-                </dependency>
                 <dependency><!-- hibernate-validator -->
                     <groupId>org.hibernate</groupId>
                     <artifactId>hibernate-validator</artifactId>
@@ -71,9 +63,13 @@
                     <groupId>org.glassfish.jersey.ext.cdi</groupId>
                     <artifactId>jersey-cdi1x</artifactId>
                 </dependency>
-                <dependency><!-- asm -->
-                    <groupId>org.ow2.asm</groupId>
-                    <artifactId>asm</artifactId>
+                <dependency>
+                    <groupId>org.glassfish.jersey.media</groupId>
+                    <artifactId>jersey-media-json-jackson</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.glassfish.jersey.ext.cdi</groupId>
+                    <artifactId>jersey-cdi1x-servlet</artifactId>
                 </dependency>
             </dependencies>
         </profile>

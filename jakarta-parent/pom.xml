@@ -40,22 +40,14 @@
         <!-- jakarta -->
         <jakarta-platform.version>9.1.0</jakarta-platform.version>
         <jakarta.mvc-api.version>2.0.0</jakarta.mvc-api.version>
-        <!---->
         <krazo.version>2.0.1</krazo.version>
-        <!---->
-        <jakarta.enterprise.cdi-api.version>3.0.0</jakarta.enterprise.cdi-api.version>
         <jersey.version>3.0.2</jersey.version>
-        <resteasy.version>4.6.0.Final</resteasy.version>
         <weld.version>4.0.1.SP1</weld.version>
-        <jakarta.servlet-api.version>5.0.0</jakarta.servlet-api.version>
-        <jakarta.servlet.jsp.jstl.version>2.0.0</jakarta.servlet.jsp.jstl.version>
-        <jakarta.el-api.version>4.0.0</jakarta.el-api.version>
-        <jakarta.el.version>4.0.1</jakarta.el.version>
-        <jakarta.json.version>2.0.0</jakarta.json.version>
         <!-- 3rd party -->
         <asm.version>9.1</asm.version>
-        <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
+        <resteasy.version>4.6.0.Final</resteasy.version>
         <jboss-logging.version>3.4.2.Final</jboss-logging.version>
+        <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
         <jboss-classfilewriter.version>1.2.5.Final</jboss-classfilewriter.version>
         <arquillian.version>1.6.0.Final</arquillian.version>
         <junit-jupiter.version>5.7.2</junit-jupiter.version>
@@ -92,11 +84,6 @@
                 <groupId>jakarta.platform</groupId>
                 <artifactId>jakarta.jakartaee-web-api</artifactId>
                 <version>${jakarta-platform.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>jakarta.enterprise</groupId>
-                <artifactId>jakarta.enterprise.cdi-api</artifactId>
-                <version>${jakarta.enterprise.cdi-api.version}</version>
             </dependency>
             <dependency><!-- mvc -->
                 <groupId>jakarta.mvc</groupId>
@@ -195,67 +182,59 @@
                 <artifactId>asm</artifactId>
                 <version>${asm.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm-commons</artifactId>
-                <version>${asm.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm-tree</artifactId>
-                <version>${asm.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm-analysis</artifactId>
-                <version>${asm.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <!-- maven-compiler-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                </plugin>
+
+                <!-- maven-war-plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin.version}</version>
+                </plugin>
+
+                <!-- lombok-maven-plugin -->
+                <plugin>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok-maven-plugin</artifactId>
+                    <version>${lombok-maven-plugin.version}</version>
+                </plugin>
+
+                <!-- jetty-maven-plugin -->
+                <plugin>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>${jetty-maven-plugin.version}</version>
+                </plugin>
+
+                <!-- cargo-maven3-plugin -->
+                <plugin>
+                    <groupId>org.codehaus.cargo</groupId>
+                    <artifactId>cargo-maven3-plugin</artifactId>
+                    <version>${cargo-maven-plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <!-- maven-compiler-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>${project.source}</source>
                     <target>${project.target}</target>
                     <encoding>${project.encoding}</encoding>
                 </configuration>
-            </plugin>
-
-            <!-- maven-war-plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven-war-plugin.version}</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-
-            <!-- lombok-maven-plugin -->
-            <plugin>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok-maven-plugin</artifactId>
-                <version>${lombok-maven-plugin.version}</version>
-            </plugin>
-
-            <!-- jetty-maven-plugin -->
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty-maven-plugin.version}</version>
-            </plugin>
-
-            <!-- cargo-maven3-plugin -->
-            <plugin>
-                <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven3-plugin</artifactId>
-                <version>${cargo-maven-plugin}</version>
             </plugin>
         </plugins>
     </build>

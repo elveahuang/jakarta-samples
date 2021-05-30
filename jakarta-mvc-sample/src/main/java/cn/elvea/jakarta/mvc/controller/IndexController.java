@@ -3,6 +3,7 @@ package cn.elvea.jakarta.mvc.controller;
 import jakarta.mvc.Controller;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 /**
@@ -10,13 +11,19 @@ import jakarta.ws.rs.core.Response;
  *
  * @author elvea
  */
+@Path("/")
 @Controller
-@Path("index")
 public class IndexController {
 
     @GET
-    public Response hello() {
-        return Response.ok().build();
+    public String hello() {
+        return "index.jsp";
+    }
+
+    @GET
+    @Path("json")
+    public Response json() {
+        return Response.ok().type(MediaType.APPLICATION_JSON).entity("Hello World.").build();
     }
 
 }
