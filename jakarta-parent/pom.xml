@@ -32,8 +32,8 @@
 
     <properties>
         <!-- project -->
-        <project.source>1.8</project.source>
-        <project.target>1.8</project.target>
+        <project.source>11</project.source>
+        <project.target>11</project.target>
         <project.encoding>UTF-8</project.encoding>
         <project.build.version>1.0.0</project.build.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,7 +42,7 @@
         <jakarta.mvc-api.version>2.0.0</jakarta.mvc-api.version>
         <krazo.version>2.0.1</krazo.version>
         <jersey.version>3.0.2</jersey.version>
-        <weld.version>4.0.1.SP1</weld.version>
+        <weld.version>4.0.2.Final</weld.version>
         <!-- 3rd party -->
         <asm.version>9.1</asm.version>
         <resteasy.version>4.6.0.Final</resteasy.version>
@@ -52,10 +52,10 @@
         <arquillian.version>1.6.0.Final</arquillian.version>
         <junit-jupiter.version>5.7.2</junit-jupiter.version>
         <!-- server -->
-        <jetty.version>11.0.3</jetty.version>
-        <tomcat.version>10.0.6</tomcat.version>
+        <jetty.version>11.0.6</jetty.version>
+        <tomcat.version>10.0.8</tomcat.version>
         <glassfish.version>6.1.0</glassfish.version>
-        <wildfly.version>23.0.2.Final</wildfly.version>
+        <wildfly.version>24.0.1.Final</wildfly.version>
         <!-- maven -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>3.3.1</maven-war-plugin.version>
@@ -63,7 +63,7 @@
         <wildfly-maven-plugin.version>2.1.0.Beta1</wildfly-maven-plugin.version>
         <maven-embedded-glassfish-plugin.version>5.1</maven-embedded-glassfish-plugin.version>
         <jetty-maven-plugin.version>${jetty.version}</jetty-maven-plugin.version>
-        <cargo-maven-plugin>1.9.4</cargo-maven-plugin>
+        <cargo-maven-plugin>1.9.5</cargo-maven-plugin>
     </properties>
 
     <dependencyManagement>
