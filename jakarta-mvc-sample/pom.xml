@@ -28,6 +28,11 @@
             <groupId>org.eclipse.krazo</groupId>
             <artifactId>krazo-core</artifactId>
         </dependency>
+        <dependency><!-- weld-api -->
+            <groupId>org.jboss.weld</groupId>
+            <artifactId>weld-api</artifactId>
+            <version>4.0.SP1</version>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -35,6 +40,10 @@
             <id>tomcat</id>
 
             <dependencies>
+                <dependency><!-- asm -->
+                    <groupId>org.ow2.asm</groupId>
+                    <artifactId>asm</artifactId>
+                </dependency>
                 <dependency><!-- weld -->
                     <groupId>org.jboss.weld.servlet</groupId>
                     <artifactId>weld-servlet-core</artifactId>
@@ -77,6 +86,15 @@
         <profile>
             <id>jetty</id>
             <dependencies>
+                <dependency><!-- asm -->
+                    <groupId>org.ow2.asm</groupId>
+                    <artifactId>asm</artifactId>
+                </dependency>
+                <dependency><!-- weld-api -->
+                    <groupId>org.jboss.weld</groupId>
+                    <artifactId>weld-api</artifactId>
+                    <version>4.0.SP1</version>
+                </dependency>
                 <dependency><!-- weld -->
                     <groupId>org.jboss.weld.servlet</groupId>
                     <artifactId>weld-servlet-core</artifactId>
@@ -113,9 +131,13 @@
                     <groupId>org.glassfish.jersey.ext.cdi</groupId>
                     <artifactId>jersey-cdi1x</artifactId>
                 </dependency>
-                <dependency><!-- asm -->
-                    <groupId>org.ow2.asm</groupId>
-                    <artifactId>asm</artifactId>
+                <dependency>
+                    <groupId>org.glassfish.jersey.media</groupId>
+                    <artifactId>jersey-media-json-jackson</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.glassfish.jersey.ext.cdi</groupId>
+                    <artifactId>jersey-cdi1x-servlet</artifactId>
                 </dependency>
             </dependencies>
         </profile>
@@ -127,28 +149,6 @@
                 <dependency>
                     <groupId>org.eclipse.krazo</groupId>
                     <artifactId>krazo-jersey</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
-
-        <profile>
-            <id>glassfish-remote</id>
-
-            <dependencies>
-                <dependency>
-                    <groupId>org.eclipse.krazo</groupId>
-                    <artifactId>krazo-jersey</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
-
-        <profile>
-            <id>wildfly</id>
-
-            <dependencies>
-                <dependency>
-                    <groupId>org.eclipse.krazo</groupId>
-                    <artifactId>krazo-resteasy</artifactId>
                 </dependency>
             </dependencies>
         </profile>
